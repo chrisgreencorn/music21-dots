@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <preference name="autoDownload" value="allow"/>
+  <preference name="braillePath"/>
+  <preference name="debug" value="0"/>
+  <preference name="directoryScratch"/>
+  <preference name="graphicsPath" value="/Applications/Preview.app"/>
+  <preference name="lilypondBackend" value="ps"/>
+  <preference name="lilypondFormat" value="pdf"/>
+  <preference name="lilypondPath" value="/Applications/Lilypond.app/Contents/Resources/bin/lilypond"/>
+  <preference name="lilypondVersion"/>
+  <localCorporaSettings/>
+  <localCorpusSettings/>
+  <preference name="manualCoreCorpusPath"/>
+  <preference name="midiPath" value="/Applications/QuickTime Player.app"/>
+  <preference name="musescoreDirectPNGPath" value="/Applications/MuseScore.app/Contents/MacOS/mscore"/>
+  <preference name="musicxmlPath" value="/Applications/Finale Notepad 2012.app"/>
+  <preference name="pdfPath" value="/Applications/Preview.app"/>
+  <preference name="showFormat" value="musicxml"/>
+  <preference name="vectorPath" value="/Applications/Preview.app"/>
+  <preference name="warnings" value="1"/>
+  <preference name="writeFormat" value="musicxml"/>
+</settings>

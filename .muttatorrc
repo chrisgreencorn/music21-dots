@@ -1,0 +1,7 @@
+noremap t j
+noremap n k
+
+noremap T 10j
+noremap N 10k
+
+noremap ; :

@@ -1,0 +1,40 @@
+"Setting the follow mode characters to be better on Dvorak Keyboard layout.
+set hintchars=aoeuhtns\',.crlid
+set hinttimeout=250
+
+"Also adding mappings appropriate for scrolling quicker with Dvorak.
+nnoremap t <Down>
+nnoremap T 10j
+nnoremap n <Up>
+nnoremap N 10k
+nnoremap H H
+nnoremap s l
+nnoremap S L
+
+"Dvorak stuff again; o instead of f for follow.
+nnoremap o f
+nnoremap O F
+
+"I'm used to QWERTY ctrl-L for selecting the search/address bar, and it's on the homerow now.
+inoremap <M-N> <M-L>
+nnoremap <M-N> <M-L>
+
+noremap <M-L> <M-N>
+
+" e to close tab.
+nnoremap <M-E> <M-W>
+nnoremap e <M-W>
+nnoremap d <M-W>
+inoremap <M-E> <M-W>
+
+"Cmd-shift-t to open a private window.
+inoremap <M-S-t> <M-S-p>
+nnoremap <M-S-t> <M-S-p>
+
+
+"Ctrl-t is my mapping for logging in.
+noremap <C-T> <Esc>
+
+"Standard vim stuff.
+nnoremap ; :
+nnoremap : ;
