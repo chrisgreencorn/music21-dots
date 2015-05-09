@@ -15,16 +15,19 @@ set wrap
 set noswapfile
 set ignorecase
 set spelllang=en
+set shellcmdflag=-ic
 
 let mapleader = "\<Space>"
 noremap <Space> <NOP>
 noremap t gj
 noremap n gk
 noremap s l
-noremap T 10gj
-noremap N 10gk
-noremap H 10h
-noremap S 10l
+noremap T }
+noremap N {
+"noremap H 10h
+"noremap S 10l
+noremap H b
+noremap S w
 
 noremap k n
 noremap K N
@@ -46,9 +49,8 @@ nnoremap O O<Space><BS>
 nnoremap <C-z> 1z=
 inoremap <C-z> <Esc>[sz=1<CR><CR>A
 
-hi Comment ctermfg=1
-hi clear SpellBad
-hi SpellBad ctermbg=1
+hi Comment ctermfg=88
+hi MatchParen ctermfg=208 ctermbg=233 cterm=bold
 
 " easy access to beginning and end of line
 noremap - $
@@ -72,6 +74,7 @@ nnoremap <Leader>jm ipublic static void main(String[] args) {<CR>}<Esc>gg=Gjo<Sp
 autocmd BufEnter *.nts call Notes()
 autocmd BufEnter *.java call Match()
 autocmd BufEnter *.java call Java()
+autocmd BufEnter,BufNewFile,BufReadPost *.tex call Tex()
 autocmd BufEnter *.c call Match()
 autocmd BufEnter *.*rc set syntax=vim
 
@@ -81,14 +84,27 @@ autocmd BufNewFile *.java
 au BufReadPost,BufNewFile,BufEnter *.java colo monokai
 au BufReadPost *.c colorscheme monokai
 
+function Tex()
+    inoremap <silent> <Tab> <Esc>/[)}"'\]>]<CR>:nohl<CR>a
+    inoremap " ``"<Left>
+    call Spell()
+    command! Latex execute "silent !pdflatex % > ./errors.txt && evince %:r.pdf > /dev/null 2>&1 &" | redraw!
+    map <C-l> :Latex<CR>
+endfunction
+
+function Essay()
+    0r ~/.vim/Template.tex
+    norm /Type<Enter>o
+endfunction
+
 function Notes() 
     inoremap <Enter> <Esc>:update<CR>o• 
     nnoremap o o• 
     nnoremap a A
     nnoremap A a
-    colo desert
-    setlocal spell 
-    endfunction
+    colo default
+    call Spell()
+endfunction
 
 function Match()
     " Match ", (, [, and {. { makes a matching pair a line below.
@@ -114,5 +130,6 @@ endfunction
 function Spell()
     setlocal spell 
     hi clear SpellBad
-    hi SpellBad ctermbg=1
+    hi SpellBad ctermbg=3
 endfunction
+
