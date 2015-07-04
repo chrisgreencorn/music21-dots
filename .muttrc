@@ -1,0 +1,42 @@
+#set realname = "Rohan Prasad"
+#set imap_user = 'therohanprasad@gmail.com'
+#set imap_pass = "JimmyBot0"
+#set spoolfile = imaps://imap.gmail.com:993/INBOX
+#set smtp_url = "smtp://therohanprasad@smtp.gmail.com:587/"
+#set folder = "imaps://imap.gmail.com:993"
+#set record="+[Gmail]/Sent Mail"
+#set postponed="+[Gmail]/Drafts"
+#set header_cache="~/.mutt/cache/headers"
+#set message_cachedir="~/.mutt/cache/bodies"
+#set certificate_file=~/.mutt/certificates
+
+bind index G imap-fetch-mail
+bind index t next-undeleted
+bind index n previous-undeleted
+
+##Black Text on White Background
+#color hdrdefault green black
+#color quoted green black
+#color signature green black
+#color status black green
+#color indicator black green
+#color normal green black
+
+#set from = "rohan_prasad@asl.org"
+#RECEIVING MAIL
+set imap_user="rohan_prasad@asl.org"
+set imap_pass = "JimmyBot0"
+set folder="imap://rohan_prasad@imap.mail.asl.org:993"
+set spoolfile="imap://rohan_prasad@mail.asl.org/INBOX"
+
+#set ssl_force_tls=yes
+#set ssl_starttls=yes
+#set smtp_url = "smtp://prasadr:JimmyBot0@mail.asl.org"
+set copy=yes
+set smtp_url="smtp://rohan_prasad@smtp.mail.asl.org:587/"
+set smtp_pass="JimmyBot0"
+set from="rohan_prasad@asl.org"
+set realname="Rohan Prasad"
+
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies

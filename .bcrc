@@ -1,0 +1,36 @@
+scale=20
+print "You have many functions available: \n"
+print "s(x) = sine of x (radians)\n"
+print "c(x) = cosine of x (radians)\n"
+print "a(x) = arctangent of x (radians)\n"
+print "l(x) = log of x base e\n"
+print "e(x) = e to the power of x\n"
+/*print "j(n,x) = bessel function of int order n of x\n"*/
+
+define i(x) {
+    auto s
+    s = scale
+    scale = 0
+    x /= 1   /* round x down */
+    scale = s
+    return (x)
+}
+print "i(x) = integer part of x\n"
+
+define p(x,y) {
+    if (y == i(y)) {
+        return (x ^ y)
+    }
+    return ( e( y * l(x) ) )
+}
+print "p(x, y) = x to the yth power\n"
+
+define log(a,b) {
+    return l(a)/l(b)
+}
+print "log(a,b) = log base b of a\n"
+
+pi=a(1)*4
+e=e(1)
+
+print "\n"

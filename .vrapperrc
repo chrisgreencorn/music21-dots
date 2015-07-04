@@ -6,11 +6,13 @@ noremap l n
 noremap L N
 noremap N 10k
 noremap T 10j
-noremap S 10l
-noremap H 10h
+noremap S w
+noremap H b
 
 noremap k n
-noremap K N
+noremap k n
+noremap l t
+noremap L T
 
 nnoremap <CR> o<Esc>
 nnoremap <BS> dd
@@ -19,15 +21,10 @@ nnoremap <BS> dd
 noremap - $
 noremap _ ^
 
-
-inoremap <c-h> <c-w>
+noremap <c-c> ~
 inoremap <c-e> <Esc>
 inoremap <c-s> <Esc>:update<Enter>a
 
-noremap ' :tabp<Enter>
-noremap , :tabn<Enter>
 nnoremap <Space>q :q!<Enter>
-nnoremap <c-w> :w<Enter>
+nnoremap <c-s> :w<Enter>
 noremap ; :
-noremap q <NOP> 
-
