@@ -1,9 +1,9 @@
-let $PAGER=''
+"let $PAGER=''
 
 syntax on
-set relativenumber
 set showcmd
 set smartindent 
+set number
 set backspace=start,eol,indent
 set smarttab
 set expandtab
@@ -24,8 +24,6 @@ noremap n gk
 noremap s l
 noremap T }
 noremap N {
-"noremap H 10h
-"noremap S 10l
 noremap H b
 noremap S w
 
@@ -36,6 +34,13 @@ noremap L T
 nnoremap ; :
 nnoremap cc ^C
 nnoremap , i_<Esc>r
+
+noremap <c-c> ~
+nnoremap <c-t> <c-e>j
+nnoremap <c-n> <c-y>k
+
+nnoremap <c-e> <NOP>
+vnoremap <c-e> <Esc>
 
 nnoremap <CR> o<Esc>
 nnoremap <BS> dd
@@ -50,18 +55,19 @@ nnoremap <C-z> 1z=
 inoremap <C-z> <Esc>[sz=1<CR><CR>A
 
 hi Comment ctermfg=88
-hi MatchParen ctermfg=208 ctermbg=233 cterm=bold
+hi MatchParen ctermfg=208 cterm=bold
+" ctermbg=233 
 
 " easy access to beginning and end of line
 noremap - $
 noremap _ 0
 
-inoremap <c-s> <C-g>u<Esc>:update<Enter>a
+inoremap <c-s> <C-g>u<Esc>:silent update<Enter>a
 
 inoremap <Tab> <Esc>>>A
 inoremap <S-Tab> <Esc><<A
 
-inoremap <c-e> <Esc>:update<CR>
+inoremap <c-e> <Esc>
 nnoremap <c-s> :update<CR>
 
 " Leader to quit
@@ -72,6 +78,7 @@ nnoremap <Leader>7 ^i//<Esc>
 nnoremap <Leader>jm ipublic static void main(String[] args) {<CR>}<Esc>gg=Gjo<Space><BS>
 
 autocmd BufEnter *.nts call Notes()
+autocmd BufEnter Stickies.nts call Notes() | set nospell
 autocmd BufEnter *.java call Match()
 autocmd BufEnter *.java call Java()
 autocmd BufEnter,BufNewFile,BufReadPost *.tex call Tex()
@@ -81,8 +88,8 @@ autocmd BufEnter *.*rc set syntax=vim
 autocmd BufNewFile *.java 
 \ exe "normal ipublic class " . expand('%:t:r') . " {\n}\<Esc>O"
 
-au BufReadPost,BufNewFile,BufEnter *.java colo monokai
-au BufReadPost *.c colorscheme monokai
+"au BufReadPost,BufNewFile,BufEnter *.java colo monokai
+"au BufReadPost *.c colorscheme monokai
 
 function Tex()
     inoremap <silent> <Tab> <Esc>/[)}"'\]>]<CR>:nohl<CR>a
@@ -98,11 +105,16 @@ function Essay()
 endfunction
 
 function Notes() 
-    inoremap <Enter> <Esc>:update<CR>o• 
+    inoremap <Enter> <Esc>o• 
     nnoremap o o• 
+    nnoremap O O• 
     nnoremap a A
     nnoremap A a
+    nnoremap ) /•<CR>
+    nnoremap ( ?•<CR>
     colo default
+    set fdm=indent
+    norm zR
     call Spell()
 endfunction
 
@@ -119,6 +131,7 @@ function Match()
 endfunction
 
 function Java()  
+    nnoremap <CR> o<Space><BS><Esc>
     iab pub public
     iab pri private
     iab Str String
@@ -130,6 +143,6 @@ endfunction
 function Spell()
     setlocal spell 
     hi clear SpellBad
-    hi SpellBad ctermbg=3
+    hi SpellBad ctermbg=7
 endfunction
 
