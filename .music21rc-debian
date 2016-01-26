@@ -13,11 +13,11 @@
   <localCorpusSettings />
   <preference name="manualCoreCorpusPath" />
   <preference name="midiPath" />
-  <preference name="musescoreDirectPNGPath" />
+  <preference name="musescoreDirectPNGPath" value="usr/share/mscore" />
   <preference name="musicxmlPath" value="/usr/bin/musescore"/>
-  <preference name="pdfPath" />
+  <preference name="pdfPath" value="/usr/bin/eog"/>
   <preference name="showFormat" value="musicxml" />
-  <preference name="vectorPath" />
+  <preference name="vectorPath" value="/usr/bin/eog" />
   <preference name="warnings" value="1" />
   <preference name="writeFormat" value="musicxml" />
 </settings>
