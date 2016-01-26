@@ -1,0 +1,23 @@
+<settings>
+  <preference name="autoDownload" value="ask" />
+  <preference name="braillePath" />
+  <preference name="debug" value="0" />
+  <preference name="directoryScratch" />
+  <preference name="graphicsPath" value="/usr/bin/eog" />
+  <preference name="ipythonShowFormat" value="ipython.musicxml.png" />
+  <preference name="lilypondBackend" />
+  <preference name="lilypondFormat" />
+  <preference name="lilypondPath" />
+  <preference name="lilypondVersion" />
+  <localCorporaSettings />
+  <localCorpusSettings />
+  <preference name="manualCoreCorpusPath" />
+  <preference name="midiPath" />
+  <preference name="musescoreDirectPNGPath" />
+  <preference name="musicxmlPath" value="/usr/bin/musescore"/>
+  <preference name="pdfPath" />
+  <preference name="showFormat" value="musicxml" />
+  <preference name="vectorPath" />
+  <preference name="warnings" value="1" />
+  <preference name="writeFormat" value="musicxml" />
+</settings>
